@@ -1,8 +1,11 @@
 :root {
     /* header/navbar colors */
-    --navBgcolor: #1b263b;
+    --navBgcolor: #212529;
     --reactFactsColor: #70d6ff;
     --reactCourseColor: #e0e1dd;
+
+    /* main page colors */
+    --mainBgcolor: #343a40;
 }
 
 * {
@@ -11,8 +14,8 @@
 
 body {
     margin: 0;
+    background: var(--mainBgcolor);
 }
-
 
 body > div#root > div.container > header > nav {
     display: flex;
@@ -20,12 +23,14 @@ body > div#root > div.container > header > nav {
     align-items: center;
     align-content: flex-start;
     flex-wrap: nowrap;
+    padding: 20px;
     background: var(--navBgcolor);
 }
 
 body > div#root > div.container > header > nav > div.logo {
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 body > div#root > div.container > header > nav > div.logo > img {
@@ -36,7 +41,7 @@ body > div#root > div.container > header > nav > div.logo > img {
 body > div#root > div.container > header > nav > div.logo > h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    display : inline;
+    /* display : inline; */
     margin-bottom: 25px;
     text-align: center;
     color: var(--reactFactsColor);
@@ -47,4 +52,32 @@ body > div#root > div.container > header > nav > h3 {
     font-weight: 600;
     margin: auto 30px;
     color: var(--reactCourseColor);
+}
+
+body > div#root > div.container > main > h1 {
+    color:white;
+    margin-left: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;   
+}
+
+body > div#root > div.container > main > ul {
+    color: white;
+    margin-left: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+body > div#root > div.container > main > ul > li::marker {
+    list-style-type: disc;
+    color: var(--reactFactsColor);
+    font-size: 30px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 540px) {
+    body > div#root > div.container > header > nav > h3 {
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+    }
 }
